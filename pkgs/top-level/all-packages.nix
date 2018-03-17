@@ -15003,6 +15003,7 @@ with pkgs;
   };
 
   cni = callPackage ../applications/networking/cluster/cni {};
+  cni-plugins = callPackage ../applications/networking/cluster/cni/plugins.nix {};
 
   communi = libsForQt5.callPackage ../applications/networking/irc/communi { };
 
