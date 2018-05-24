@@ -310,7 +310,7 @@ in {
       tokenAuthFile = mkOption {
         description = ''
           Kubernetes apiserver token authentication file. See
-          <link xlink:href="http://kubernetes.io/docs/admin/authentication.html"/>
+          <link xlink:href="https://kubernetes.io/docs/reference/access-authn-authz/authentication"/>
         '';
         default = null;
         type = types.nullOr types.path;
@@ -319,7 +319,7 @@ in {
       basicAuthFile = mkOption {
         description = ''
           Kubernetes apiserver basic authentication file. See
-          <link xlink:href="http://kubernetes.io/docs/admin/authentication.html"/>
+          <link xlink:href="https://kubernetes.io/docs/reference/access-authn-authz/authentication"/>
         '';
         default = pkgs.writeText "users" ''
           kubernetes,admin,0
@@ -330,7 +330,7 @@ in {
       authorizationMode = mkOption {
         description = ''
           Kubernetes apiserver authorization mode (AlwaysAllow/AlwaysDeny/ABAC/RBAC). See
-          <link xlink:href="http://kubernetes.io/docs/admin/authorization.html"/>
+          <link xlink:href="https://kubernetes.io/docs/reference/access-authn-authz/authorization/"/>
         '';
         default = ["RBAC" "Node"];
         type = types.listOf (types.enum ["AlwaysAllow" "AlwaysDeny" "ABAC" "RBAC" "Node"]);
@@ -339,7 +339,7 @@ in {
       authorizationPolicy = mkOption {
         description = ''
           Kubernetes apiserver authorization policy file. See
-          <link xlink:href="http://kubernetes.io/docs/admin/authorization.html"/>
+          <link xlink:href="https://kubernetes.io/docs/reference/access-authn-authz/authorization/"/>
         '';
         default = [];
         type = types.listOf types.attrs;
@@ -363,7 +363,7 @@ in {
       runtimeConfig = mkOption {
         description = ''
           Api runtime configuration. See
-          <link xlink:href="http://kubernetes.io/docs/admin/cluster-management.html"/>
+          <link xlink:href="https://kubernetes.io/docs/tasks/administer-cluster/cluster-management/"/>
         '';
         default = "authentication.k8s.io/v1beta1=true";
         example = "api/all=false,api/v1=true";
