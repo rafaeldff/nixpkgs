@@ -1,7 +1,7 @@
 { fetchurl, stdenv, squashfsTools, xorg, alsaLib, makeWrapper, openssl, freetype
 , glib, pango, cairo, atk, gdk-pixbuf, gtk2, cups, nspr, nss, libpng, libnotify
 , libgcrypt, systemd, fontconfig, dbus, expat, ffmpeg_3, curl, zlib, gnome3
-, at-spi2-atk, at-spi2-core, apulse
+, at-spi2-atk, at-spi2-core, libpulseaudio
 }:
 
 let
@@ -21,8 +21,8 @@ let
 
 
   deps = [
+    libpulseaudio
     alsaLib
-    apulse
     atk
     at-spi2-atk
     at-spi2-core
@@ -135,8 +135,6 @@ stdenv.mkDerivation {
       librarypath="${stdenv.lib.makeLibraryPath deps}:$libdir"
       wrapProgram $out/share/spotify/spotify \
         --prefix LD_LIBRARY_PATH : "$librarypath" \
-        --prefix LD_LIBRARY_PATH : "${apulse}/lib/apulse" \
-        --set APULSE_PLAYBACK_DEVICE plug:dmix \
         --prefix PATH : "${gnome3.zenity}/bin"
 
       # fix Icon line in the desktop file (#48062)
