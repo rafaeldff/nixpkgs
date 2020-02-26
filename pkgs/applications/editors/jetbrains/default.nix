@@ -302,14 +302,15 @@ in
 
   idea-ultimate = buildIdea rec {
     name = "idea-ultimate-${version}";
-    version = "201.3803.71"; /* updated by script */
+    version = "201.5616.10"; /* updated by script */
     description = "Integrated Development Environment (IDE) by Jetbrains, requires paid license";
     license = stdenv.lib.licenses.unfree;
     # https://download.jetbrains.com/idea/ideaIU-201.3803.71.tar.gz
     src = fetchurl {
       url = "https://download.jetbrains.com/idea/ideaIU-${version}.tar.gz";
-      #sha256 = "0cjmcpsfnrhs2ggv4pa0pyck08xvclwazqp1i1ygdii4qlvkam47"; 
-      sha256 = "38e8f6e3093e462ac206b17deefa32908a12a2ddfbc01bd048bd9cdbea8260f6"; 
+      sha256 = "1yfyyfc65x7fgrs36f239c5rmp0z12hc32d4mfai7h8z5smwdvhr";
+      #sha256 = "1pd1sg2xgydg95mqjai2vdrynzf44pw42glfaaj46ziihm93f17m";
+      #sha256 = "38e8f6e3093e462ac206b17deefa32908a12a2ddfbc01bd048bd9cdbea8260f6"; 
     };
     wmClass = "jetbrains-idea";
     update-channel = "IntelliJ IDEA RELEASE";
