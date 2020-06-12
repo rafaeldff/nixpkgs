@@ -409,6 +409,8 @@ in
 
   makeInitrd = callPackage ../build-support/kernel/make-initrd.nix; # Args intentionally left out
 
+  mat = callPackage ../development/tools/java/mat { };
+
   makeWrapper = makeSetupHook { deps = [ dieHook ]; substitutions = { shell = pkgs.runtimeShell; }; }
                               ../build-support/setup-hooks/make-wrapper.sh;
 
