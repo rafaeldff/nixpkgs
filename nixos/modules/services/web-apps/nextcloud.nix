@@ -370,7 +370,7 @@ in {
               nextcloud defined in an overlay, please set `services.nextcloud.package` to
               `pkgs.nextcloud`.
             ''
-          else if versionOlder stateVersion "20.03" then nextcloud17
+          #else if versionOlder stateVersion "20.03" then nextcloud17
           else if versionOlder stateVersion "20.09" then nextcloud18
           else nextcloud19
         );

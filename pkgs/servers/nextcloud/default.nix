@@ -27,17 +27,17 @@ let
     };
   };
 in {
-  nextcloud17 = throw ''
-    Nextcloud v17 has been removed from `nixpkgs` as the support for it will be dropped
-    by upstream within the lifetime of NixOS 20.09[1]. Please upgrade to Nextcloud v18 by
-    declaring
+  #nextcloud17 = throw ''
+    #Nextcloud v17 has been removed from `nixpkgs` as the support for it will be dropped
+    #by upstream within the lifetime of NixOS 20.09[1]. Please upgrade to Nextcloud v18 by
+    #declaring
 
-        services.nextcloud.package = pkgs.nextcloud18;
+        #services.nextcloud.package = pkgs.nextcloud18;
 
-    in your NixOS config.
+    #in your NixOS config.
 
-    [1] https://docs.nextcloud.com/server/18/admin_manual/release_schedule.html
-  '';
+    #[1] https://docs.nextcloud.com/server/18/admin_manual/release_schedule.html
+  #'';
 
   nextcloud18 = generic {
     version = "18.0.10";
