@@ -5710,8 +5710,8 @@ in
 
   grocy = callPackage ../servers/grocy { };
 
-  inherit (callPackage ../servers/nextcloud {})
-    nextcloud18 nextcloud19 nextcloud20;
+  #inherit (callPackage ../servers/nextcloud {})
+    #nextcloud18 nextcloud19 nextcloud20;
 
   nextcloud-client = libsForQt514.callPackage ../applications/networking/nextcloud-client { };
 
